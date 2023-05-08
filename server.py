@@ -8,7 +8,8 @@ app = Flask(__name__)
 def stress_cpu():
 
     if request.method == 'POST':
-        subprocess.Popen('python3 stress_cpu.py')
+        subprocess.Popen(['python3', 'stress_cpu.py'])
+        return jsonify(sucess=True)
     else:
         return socket.gethostname()
 
